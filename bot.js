@@ -629,6 +629,8 @@ bot.hears(backButton, (ctx) => {
           },
         };
         text = `از بین نتایج جست‌ و جو، رشته‌ی مد نظرت رو انتخاب کن:`;
+        // log:
+        logger(ctx, "pressed the send buttton.");
         usersInfo[ctx.chat.id].menu = "major_result";
         break;
       case "course_name":
@@ -640,6 +642,8 @@ bot.hears(backButton, (ctx) => {
         };
         text = `اسم کتاب چیه؟`;
         usersInfo[ctx.chat.id].menu = "book_name";
+        // log:
+        logger(ctx, "pressed the send buttton.");
         break;
       case "description":
         options = {
@@ -648,12 +652,11 @@ bot.hears(backButton, (ctx) => {
             resize_keyboard: true,
           },
         };
-        bot.telegram.sendMessage(
-          ctx.chat.id,
-          "جزوه یا کتاب متعلق به چه درسی هست؟",
-          options
-        );
+
+        text = "جزوه یا کتاب متعلق به چه درسی هست؟";
         usersInfo[ctx.chat.id].menu = "course_name";
+        // log:
+        logger(ctx, "pressed the send buttton.");
         break;
       case "file":
         options = {
@@ -665,6 +668,8 @@ bot.hears(backButton, (ctx) => {
         text =
           "میتونی توضیحات بیشتری در مورد کتاب یا جزوه اضافه کنی؟(مثلاً اسم گردآورنده یا مولف و...)";
         usersInfo[ctx.chat.id].menu = "description";
+        // log:
+        logger(ctx, "pressed the send buttton.");
         break;
       default:
         options = {
@@ -674,7 +679,8 @@ bot.hears(backButton, (ctx) => {
           },
         };
         text = `متوجه نشدم! چه کاری برات انجام بدم؟!`;
-
+        // log:
+        logger(ctx, "pressed the send buttton.");
         usersInfo[ctx.chat.id].menu = "main_menu";
         break;
     }
