@@ -640,7 +640,7 @@ bot.hears(backButton, (ctx) => {
             resize_keyboard: true,
           },
         };
-        text = `اسم کتاب چیه؟`;
+        text = `عنوان منبعی که داری برام میفرستی چیه؟`;
         usersInfo[ctx.chat.id].menu = "book_name";
         // log:
         logger(ctx, "pressed the send buttton.");
@@ -804,7 +804,11 @@ bot.hears(/.*/, (ctx) => {
                 resize_keyboard: true,
               },
             };
-            bot.telegram.sendMessage(ctx.chat.id, `اسم کتاب چیه؟`, options);
+            bot.telegram.sendMessage(
+              ctx.chat.id,
+              `عنوان منبعی که داری برام میفرستی چیه؟`,
+              options
+            );
             usersInfo[ctx.chat.id].menu = "book_name";
           } else {
             const options = {
