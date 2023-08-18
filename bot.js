@@ -727,7 +727,7 @@ bot.hears(/.*/, (ctx) => {
           usersInfo[ctx.chat.id].menu = "send_major";
         } else {
           usersInfo[ctx.chat.id].result = searchMajor(ctx.message.text);
-          if (usersInfo[ctx.chat.id].result.length > 0) {
+          if (usersInfo[ctx.chat.id].result.length > 1) {
             const options = {
               reply_markup: {
                 keyboard: usersInfo[ctx.chat.id].result,
@@ -790,7 +790,7 @@ bot.hears(/.*/, (ctx) => {
               return;
             }
           });
-          if (usersInfo[ctx.chat.id].result.length == 1) {
+          if (usersInfo[ctx.chat.id].result.length == 2) {
             usersInfo[ctx.chat.id].major = ctx.message.text;
             const options = {
               reply_markup: {
