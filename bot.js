@@ -624,7 +624,7 @@ bot.hears(backButton, (ctx) => {
       case "book_name":
         options = {
           reply_markup: {
-            keyboard: [usersInfo[ctx.chat.id].result],
+            keyboard: [usersInfo[ctx.chat.id].result, [backButton]],
             resize_keyboard: true,
           },
         };
