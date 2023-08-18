@@ -790,7 +790,7 @@ bot.hears(/.*/, (ctx) => {
               return;
             }
           });
-          if (usersInfo[ctx.chat.id].result.length == 2) {
+          if (usersInfo[ctx.chat.id].result.length == 1) {
             usersInfo[ctx.chat.id].major = ctx.message.text;
             const options = {
               reply_markup: {
