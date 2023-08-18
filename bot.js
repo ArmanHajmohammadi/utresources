@@ -1015,7 +1015,9 @@ bot.on("document", async (ctx) => {
 
       // Posting it in the channel:
       // Add a caption to the document
-      const caption = `🧑🏼‍🎓 رشته: ${usersInfo[ctx.chat.id].major}
+      const caption = `🧑🏼‍🎓 رشته: ${
+        "#" + usersInfo[ctx.chat.id].major.replace(" ", "_")
+      }
 📝 نام درس: ${usersInfo[ctx.chat.id].course}
 📚نام کتاب/جزوه: ${usersInfo[ctx.chat.id].book}
 🖊 نوع فایل: ${type}
